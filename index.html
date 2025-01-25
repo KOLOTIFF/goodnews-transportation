@@ -63,13 +63,13 @@
             <h2>Request a Ride</h2>
             <form id="ride-form">
                 <label for="pickup">Pickup Location:</label>
-                <input type="text" id="pickup" name="pickup" required autocomplete="off">
+                <input type="text" id="pickup" name="pickup" required autocomplete="off" onfocus="initAutocomplete('pickup')">
                 
                 <label for="dropoff">Drop-off Location:</label>
-                <input type="text" id="dropoff" name="dropoff" required autocomplete="off">
+                <input type="text" id="dropoff" name="dropoff" required autocomplete="off" onfocus="initAutocomplete('dropoff')">
                 
                 <label for="stops">Additional Stops (Optional):</label>
-                <input type="text" id="stops" name="stops" autocomplete="off">
+                <input type="text" id="stops" name="stops" autocomplete="off" onfocus="initAutocomplete('stops')">
                 
                 <label for="date">Pickup Date:</label>
                 <input type="date" id="date" name="date" required>
