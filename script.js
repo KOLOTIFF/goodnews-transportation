@@ -13,3 +13,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initAutocomplete();
 });
+function initAutocomplete(inputId) {
+    var input = document.getElementById(inputId);
+    if (input) {
+        new google.maps.places.Autocomplete(input);
+    }
+}
