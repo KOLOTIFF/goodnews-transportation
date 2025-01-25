@@ -30,7 +30,7 @@
         <section id="about" class="section">
             <h2>About Us</h2>
             <p>Good News Transportation LLC is dedicated to providing safe, reliable, and compassionate transportation for children with autism. Our experienced and trained drivers ensure a stress-free ride, making every journey smooth and enjoyable.</p>
-            <img src="about-us-small.jpg" srcset="about-us-small.jpg 300w, about-us-medium.jpg 600w, about-us-large.jpg 1200w" sizes="(max-width: 300px) 300px, (max-width: 600px) 600px, 1200px" alt="Transportation Image">
+            <img src="about-us.jpg" alt="Transportation Image">
         </section>
         
         <section id="services" class="section">
@@ -59,26 +59,30 @@
             </div>
         </section>
         
-        <section id="request-service" class="section">
-            <h2>Request a Ride</h2>
-            <form action="#" method="POST">
-                <label for="pickup">Pickup Location:</label>
-                <input type="text" id="pickup" name="pickup" aria-label="Pickup Location" required autocomplete="off">
-                
-                <label for="dropoff">Drop-off Location:</label>
-                <input type="text" id="dropoff" name="dropoff" aria-label="Drop-off Location" required autocomplete="off">
-                
-                <label for="stops">Additional Stops (Optional):</label>
-                <input type="text" id="stops" name="stops" aria-label="Additional Stops" autocomplete="off">
-                
-                <label for="date">Pickup Date:</label>
-                <input type="date" id="date" name="date" aria-label="Pickup Date" required>
-                
-                <label for="time">Pickup Time:</label>
-                <input type="time" id="time" name="time" aria-label="Pickup Time" required>
-                
-                <button type="submit" class="btn">Request Service</button>
-            </form>
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>We’d love to hear from you! Reach out to us using the form below or through our contact details.</p>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <p><strong>📍 Address:</strong> 3981 Sunset Road, Harrisburg, PA 17112</p>
+                    <p><strong>📞 Phone:</strong> (646) 236-6741</p>
+                    <p><strong>📧 Email:</strong> <a href="mailto:info@goodnews-transportation.com">info@goodnews-transportation.com</a></p>
+                </div>
+                <div class="contact-form">
+                    <form action="#" method="POST">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
             <div id="map"></div>
         </section>
         
@@ -86,7 +90,7 @@
             <h2>Frequently Asked Questions</h2>
             <ul>
                 <li><strong>Who can use your services?</strong> We serve children with autism from elementary to high school.</li>
-                <li><strong>What areas do you serve?</strong> [Specify service locations]</li>
+                <li><strong>What areas do you serve?</strong> Harrisburg, PA and surrounding areas.</li>
                 <li><strong>How do I request transportation?</strong> Use the form above or contact us.</li>
                 <li><strong>Are your drivers trained?</strong> Yes, all drivers undergo special needs training.</li>
                 <li><strong>What safety measures are in place?</strong> GPS tracking, seatbelt accommodations, low-noise environment.</li>
