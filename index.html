@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Good News Transportation LLC</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0A84eVgPXrpq5ulggRQJ04XD-5kIXYo0&libraries=places"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
@@ -13,107 +13,20 @@
         <div class="overlay">
             <h1>Good News Transportation LLC</h1>
             <p>Reliable and Safe Transportation for Autism Children</p>
-            <a href="#request-service" class="btn">Request a Ride</a>
+            <a href="request-service.html" class="btn">Request a Ride</a>
         </div>
     </header>
     <nav class="navbar">
         <ul>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#faq">FAQ</a></li>
-            <li><a href="#steps">Steps to Get Started</a></li>
-            <li><a href="#referral">Referral</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="steps.html">Steps to Get Started</a></li>
+            <li><a href="referral.html">Referral</a></li>
+            <li><a href="message.html">Message</a></li>
         </ul>
     </nav>
-    <main>
-        <section id="about" class="section">
-            <h2>About Us</h2>
-            <p>Good News Transportation LLC provides safe, reliable, and compassionate transportation for children with autism. Our experienced and trained drivers ensure a stress-free ride, making every journey smooth and enjoyable.</p>
-            <img src="about-us.jpg" alt="Transportation Image">
-        </section>
-        
-        <section id="services" class="section">
-            <h2>Our Services</h2>
-            <div class="service-container">
-                <div class="service-box">
-                    <img src="school-transport.jpg" alt="School Transport">
-                    <h3>School Transport</h3>
-                    <p>Safe and comfortable rides for autistic children.</p>
-                </div>
-                <div class="service-box">
-                    <img src="door-to-door.jpg" alt="Door-to-Door Pickup">
-                    <h3>Door-to-Door Pickup</h3>
-                    <p>Reliable service for schools, therapy centers, and homes.</p>
-                </div>
-                <div class="service-box">
-                    <img src="real-time-tracking.jpg" alt="Real-Time Tracking">
-                    <h3>Real-Time Tracking</h3>
-                    <p>Parents receive live updates on their child's journey.</p>
-                </div>
-                <div class="service-box">
-                    <img src="trained-drivers.jpg" alt="Trained Drivers">
-                    <h3>Trained & Caring Drivers</h3>
-                    <p>Our team is trained to handle children with autism.</p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="request-service" class="section">
-            <h2>Request a Ride</h2>
-            <form id="ride-form">
-                <label for="pickup">Pickup Location:</label>
-                <input type="text" id="pickup" name="pickup" required autocomplete="off" onfocus="initAutocomplete('pickup')">
-                
-                <label for="dropoff">Drop-off Location:</label>
-                <input type="text" id="dropoff" name="dropoff" required autocomplete="off" onfocus="initAutocomplete('dropoff')">
-                
-                <label for="stops">Additional Stops (Optional):</label>
-                <input type="text" id="stops" name="stops" autocomplete="off" onfocus="initAutocomplete('stops')">
-                
-                <label for="date">Pickup Date:</label>
-                <input type="date" id="date" name="date" required>
-                
-                <label for="time">Pickup Time:</label>
-                <input type="time" id="time" name="time" required>
-                
-                <button type="submit" class="btn">Request Service</button>
-            </form>
-            <div id="map"></div>
-        </section>
-        
-        <section id="contact" class="section">
-            <h2>Contact Us</h2>
-            <p>📍 Address: 3981 Sunset Road, Harrisburg, PA 17112</p>
-            <p>📞 Phone: (646) 236-6741</p>
-            <p>📧 Email: <a href="mailto:info@goodnews-transportation.com">info@goodnews-transportation.com</a></p>
-        </section>
-        
-        <section id="faq" class="section">
-            <h2>Frequently Asked Questions</h2>
-            <ul>
-                <li><strong>Who can use your services?</strong> We serve children with autism from elementary to high school.</li>
-                <li><strong>What areas do you serve?</strong> Harrisburg, PA and surrounding areas.</li>
-                <li><strong>How do I request transportation?</strong> Use the form above or contact us.</li>
-                <li><strong>Are your drivers trained?</strong> Yes, all drivers undergo special needs training.</li>
-                <li><strong>What safety measures are in place?</strong> GPS tracking, seatbelt accommodations, low-noise environment.</li>
-            </ul>
-        </section>
-        
-        <section id="steps" class="section">
-            <h2>Steps to Get Started</h2>
-            <ol>
-                <li>Contact us via phone, email, or online form.</li>
-                <li>Schedule a consultation for transportation needs.</li>
-                <li>Finalize the plan, enable GPS tracking, and confirm the start date.</li>
-            </ol>
-        </section>
-        
-        <section id="referral" class="section">
-            <h2>Referral Program</h2>
-            <p>Refer a friend and get exclusive benefits! Contact us for more details.</p>
-        </section>
-    </main>
     <footer>
         <p>© 2025 Good News Transportation LLC | All Rights Reserved</p>
         <p>📞 Contact: (646) 236-6741 | 📧 Email: <a href="mailto:info@goodnews-transportation.com">info@goodnews-transportation.com</a></p>
