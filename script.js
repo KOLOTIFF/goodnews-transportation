@@ -24,3 +24,15 @@ document.getElementById("ride-form").addEventListener("submit", function(event) 
     event.preventDefault();
     alert("Your ride request has been submitted!");
 });
+function initAutocomplete(inputId) {
+    let input = document.getElementById(inputId);
+    if (input) {
+        new google.maps.places.Autocomplete(input);
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    initAutocomplete("pickup");
+    initAutocomplete("dropoff");
+    initAutocomplete("stops");
+});
