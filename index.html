@@ -1,41 +1,114 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Good News Transportation LLC</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
-    <script defer src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good News Transportation LLC | Autism Transportation Services</title>
+    <meta name="description" content="Safe, sensory-friendly transportation for children with autism. Book rides with real-time tracking and multiple stops.">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Places Autocomplete & Maps API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places&callback=initAutocomplete" async defer></script>
+    
+    <!-- Flatpickr Calendar -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 </head>
 <body>
-    <header class="hero-section">
-        <div class="overlay">
+    <!-- Header -->
+    <header class="hero">
+        <div class="hero-content">
             <h1>Good News Transportation LLC</h1>
-            <p>Reliable and Safe Transportation for Autism Children</p>
-            <a href="request-service.html" class="btn">Request a Ride</a>
+            <p>Compassionate Rides for Children with Autism</p>
         </div>
     </header>
-    <nav class="navbar">
-        <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="faq.html">FAQ</a></li>
-            <li><a href="steps.html">Steps to Get Started</a></li>
-            <li><a href="referral.html">Referral</a></li>
-            <li><a href="message.html">Message</a></li>
-        </ul>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#request">Request Ride</a>
+        <a href="#contact">Contact</a>
     </nav>
-    <main>
-        <section id="welcome" class="section">
-            <h2>Welcome to Good News Transportation LLC</h2>
-            <p>Providing safe and reliable transportation services for children with autism, ensuring their comfort and safety at all times.</p>
-        </section>
-    </main>
+
+    <!-- Service Highlights -->
+    <section class="highlights">
+        <div class="highlight-card">
+            <img src="safety-icon.png" alt="Safety First">
+            <h3>Certified Safety</h3>
+            <p>CPR-trained drivers & GPS tracking</p>
+        </div>
+        <div class="highlight-card">
+            <img src="calendar-icon.png" alt="Flexible Scheduling">
+            <h3>Flexible Scheduling</h3>
+            <p>Daily or occasional rides</p>
+        </div>
+    </section>
+
+    <!-- Service Request Form -->
+    <section class="section" id="request">
+        <h2>Schedule a Ride</h2>
+        <form id="serviceForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <div class="form-group">
+                <label>Parent/Guardian Name:</label>
+                <input type="text" name="name" required>
+            </div>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label>Pickup Address:</label>
+                <input type="text" id="autocomplete" name="pickup_address" placeholder="Start typing your address..." required>
+            </div>
+            <div class="form-group">
+                <label>Additional Stops:</label>
+                <div id="stopsContainer">
+                    <input type="text" name="stop1" placeholder="Add a stop (optional)">
+                </div>
+                <button type="button" class="btn-add" onclick="addStop()">+ Add Another Stop</button>
+            </div>
+            <div class="form-group">
+                <label>Preferred Date/Time:</label>
+                <input type="text" id="dateTime" name="datetime" placeholder="Select date and time" required>
+            </div>
+            <button type="submit" class="btn-submit">Submit Request</button>
+        </form>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery">
+        <img src="vehicle-interior.jpg" alt="Sensory-friendly vehicle interior">
+        <img src="driver-training.jpg" alt="Driver training session">
+        <img src="child-boarding.jpg" alt="Child boarding safely">
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>© 2025 Good News Transportation LLC | All Rights Reserved</p>
-        <p>📞 Contact: (646) 236-6741 | 📧 Email: <a href="mailto:info@goodnews-transportation.com">info@goodnews-transportation.com</a></p>
+        <p>© 2023 Good News Transportation LLC</p>
+        <p>DOT Certified | Fully Insured</p>
     </footer>
+
+    <!-- External JavaScript -->
+    <script src="scripts.js"></script>
 </body>
 </html>
