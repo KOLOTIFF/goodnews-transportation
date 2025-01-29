@@ -1,38 +1,34 @@
-document.addEventListener('DOMContentLoaded', function() {
-    alert('Welcome to Good News Transportation!');
-
-    function initAutocomplete() {
-        var input1 = document.getElementById('pickup');
-        var input2 = document.getElementById('dropoff');
-        var input3 = document.getElementById('stops');
-
-        new google.maps.places.Autocomplete(input1);
-        new google.maps.places.Autocomplete(input2);
-        new google.maps.places.Autocomplete(input3);
-    }
-
-    initAutocomplete();
-});
-function initAutocomplete(inputId) {
-    var input = document.getElementById(inputId);
-    if (input) {
-        new google.maps.places.Autocomplete(input);
-    }
+// Google Places Autocomplete
+let autocomplete;
+function initAutocomplete() {
+    autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('autocomplete'),
+        { types: ['geocode'] }
+    );
 }
 
-document.getElementById("ride-form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    alert("Your ride request has been submitted!");
-});
-function initAutocomplete(inputId) {
-    let input = document.getElementById(inputId);
-    if (input) {
-        new google.maps.places.Autocomplete(input);
-    }
+// Add Multiple Stops
+let stopCount = 1;
+function addStop() {
+    stopCount++;
+    const newStop = document.createElement('input');
+    newStop.type = 'text';
+    newStop.name = `stop${stopCount}`;
+    newStop.placeholder = 'Add another stop (optional)';
+    document.getElementById('stopsContainer').appendChild(newStop);
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-    initAutocomplete("pickup");
-    initAutocomplete("dropoff");
-    initAutocomplete("stops");
+// Flatpickr Calendar
+flatpickr('#dateTime', {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    minDate: "today"
+});
+
+// Form Submission Handling
+document.getElementById('serviceForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // Add real-time tracking integration here (e.g., Websockets or API)
+    this.submit();
+    alert('Request submitted! We’ll send tracking details via email.');
 });
