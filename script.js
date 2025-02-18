@@ -1,34 +1,20 @@
-// Google Places Autocomplete
-let autocomplete;
-function initAutocomplete() {
-    autocomplete = new google.maps.places.Autocomplete(
-        document.getElementById('autocomplete'),
-        { types: ['geocode'] }
-    );
-}
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('Website Loaded');
+    
+    // Initialize Google Maps Autocomplete
+    function initAutocomplete(id) {
+        let input = document.getElementById(id);
+        new google.maps.places.Autocomplete(input);
+    }
 
-// Add Multiple Stops
-let stopCount = 1;
-function addStop() {
-    stopCount++;
-    const newStop = document.createElement('input');
-    newStop.type = 'text';
-    newStop.name = `stop${stopCount}`;
-    newStop.placeholder = 'Add another stop (optional)';
-    document.getElementById('stopsContainer').appendChild(newStop);
-}
-
-// Flatpickr Calendar
-flatpickr('#dateTime', {
-    enableTime: true,
-    dateFormat: "Y-m-d H:i",
-    minDate: "today"
-});
-
-// Form Submission Handling
-document.getElementById('serviceForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Add real-time tracking integration here (e.g., Websockets or API)
-    this.submit();
-    alert('Request submitted! We’ll send tracking details via email.');
+    // Smooth scrolling for menu links
+    document.querySelectorAll('.navbar a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
 });
