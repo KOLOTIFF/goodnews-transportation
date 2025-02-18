@@ -1,115 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Good News Transportation LLC | Autism Transportation Services</title>
-    <meta name="description" content="Safe, sensory-friendly transportation for children with autism. Book rides with real-time tracking and multiple stops.">
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
-    
-    <!-- Google Places Autocomplete & Maps API -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0A84eVgPXrpq5ulggRQJ04XD-5kIXYo0&libraries=places&callback=initAutocomplete" async defer></script>
-    
-    <!-- Flatpickr Calendar -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Good News Transportation LLC</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="hero">
-        <div class="hero-content">
+    <header class="hero-section">
+        <div class="overlay">
             <h1>Good News Transportation LLC</h1>
-            <p>Compassionate Rides for Children with Autism</p>
+            <p>Reliable and Safe Transportation for Autism Children</p>
+            <a href="request-service.html" class="btn">Request a Ride</a>
         </div>
     </header>
-
-    <!-- Navigation -->
-    <nav>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#request">Request Ride</a>
-        <a href="#contact">Contact</a>
+    <nav class="navbar">
+        <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="steps.html">Steps to Get Started</a></li>
+            <li><a href="referral.html">Referral</a></li>
+            <li><a href="message.html">Message</a></li>
+        </ul>
     </nav>
+    <main>
+        <section id="hero" class="hero-banner">
+            <div class="hero-content">
+                <h1>Reliable & Safe Transportation</h1>
+                <p>Providing specialized transportation for children with autism</p>
+                <a href="request-service.html" class="btn">Book Now</a>
+            </div>
+        </section>
+        
+        <section id="about" class="section">
+            <h2>About Us</h2>
+            <p>Good News Transportation LLC is committed to offering safe, reliable, and compassionate transportation for children with autism. Our trained drivers ensure a stress-free experience for both children and parents.</p>
+            <a href="about.html" class="btn">Learn More</a>
+        </section>
 
-    <!-- Service Highlights -->
-    <section class="highlights">
-        <div class="highlight-card">
-            <img src="safety-icon.png" alt="Safety First">
-            <h3>Certified Safety</h3>
-            <p>CPR-trained drivers & GPS tracking</p>
-        </div>
-        <div class="highlight-card">
-            <img src="calendar-icon.png" alt="Flexible Scheduling">
-            <h3>Flexible Scheduling</h3>
-            <p>Daily or occasional rides</p>
-        </div>
-    </section>
-
-    <!-- Service Request Form -->
-    <section class="section" id="request">
-        <h2>Schedule a Ride</h2>
-        <form id="serviceForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-            <div class="form-group">
-                <label>Parent/Guardian Name:</label>
-                <input type="text" name="name" required>
-            </div>
-            <div class="form-group">
-                <label>Email:</label>
-                <input type="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label>Pickup Address:</label>
-                <input type="text" id="autocomplete" name="pickup_address" placeholder="Start typing your address..." required>
-            </div>
-            <div class="form-group">
-                <label>Additional Stops:</label>
-                <div id="stopsContainer">
-                    <input type="text" name="stop1" placeholder="Add a stop (optional)">
+        <section id="services" class="section">
+            <h2>Our Services</h2>
+            <div class="service-container">
+                <div class="service-box">
+                    <img src="school-transport.jpg" alt="School Transport">
+                    <h3>School Transport</h3>
+                    <p>Safe and comfortable rides for autistic children.</p>
                 </div>
-                <button type="button" class="btn-add" onclick="addStop()">+ Add Another Stop</button>
+                <div class="service-box">
+                    <img src="door-to-door.jpg" alt="Door-to-Door Pickup">
+                    <h3>Door-to-Door Pickup</h3>
+                    <p>Reliable service for schools, therapy centers, and homes.</p>
+                </div>
+                <div class="service-box">
+                    <img src="real-time-tracking.jpg" alt="Real-Time Tracking">
+                    <h3>Real-Time Tracking</h3>
+                    <p>Parents receive live updates on their child's journey.</p>
+                </div>
+                <div class="service-box">
+                    <img src="trained-drivers.jpg" alt="Trained Drivers">
+                    <h3>Trained & Caring Drivers</h3>
+                    <p>Our team is trained to handle children with autism.</p>
+                </div>
             </div>
-            <div class="form-group">
-                <label>Preferred Date/Time:</label>
-                <input type="text" id="dateTime" name="datetime" placeholder="Select date and time" required>
-            </div>
-            <button type="submit" class="btn-submit">Submit Request</button>
-        </form>
-    </section>
-
-    <!-- Contact Form -->
-    <section class="section" id="contact">
-        <h2>Contact Us</h2>
-        <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
-            <div class="form-group">
-                <input type="text" name="name" placeholder="Your Name" required>
-            </div>
-            <div class="form-group">
-                <input type="email" name="email" placeholder="Your Email" required>
-            </div>
-            <div class="form-group">
-                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            </div>
-            <button type="submit" class="btn-submit">Send Message</button>
-        </form>
-    </section>
-
-    <!-- Gallery -->
-    <section class="gallery">
-        <img src="vehicle-interior.jpg" alt="Sensory-friendly vehicle interior">
-        <img src="driver-training.jpg" alt="Driver training session">
-        <img src="child-boarding.jpg" alt="Child boarding safely">
-    </section>
-
-    <!-- Footer -->
+            <a href="services.html" class="btn">View All Services</a>
+        </section>
+        
+        <section id="request-service" class="section">
+            <h2>Request a Ride</h2>
+            <form id="ride-form">
+                <label for="pickup">Pickup Location:</label>
+                <input type="text" id="pickup" name="pickup" required autocomplete="off" onfocus="initAutocomplete('pickup')">
+                
+                <label for="dropoff">Drop-off Location:</label>
+                <input type="text" id="dropoff" name="dropoff" required autocomplete="off" onfocus="initAutocomplete('dropoff')">
+                
+                <label for="stops">Additional Stops (Optional):</label>
+                <input type="text" id="stops" name="stops" autocomplete="off" onfocus="initAutocomplete('stops')">
+                
+                <label for="date">Pickup Date:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="time">Pickup Time:</label>
+                <input type="time" id="time" name="time" required>
+                
+                <button type="submit" class="btn">Request Service</button>
+            </form>
+            <div id="map"></div>
+        </section>
+        
+        <section id="contact" class="section">
+            <h2>Contact Us</h2>
+            <p>📍 Address: 3981 Sunset Road, Harrisburg, PA 17112</p>
+            <p>📞 Phone: (646) 236-6741</p>
+            <p>📧 Email: <a href="mailto:info@goodnews-transportation.com">info@goodnews-transportation.com</a></p>
+            <a href="contact.html" class="btn">Get in Touch</a>
+        </section>
+    </main>
     <footer>
-        <p>© 2023 Good News Transportation LLC</p>
-        <p>Email: <a href="mailto:info@goodnews-transportation.com">info@goodnews-transportation.com</a></p>
-        <p>DOT Certified | Fully Insured</p>
+        <p>© 2025 Good News Transportation LLC | All Rights Reserved</p>
+        <p>📞 Contact: (646) 236-6741 | 📧 Email: <a href="mailto:info@goodnews-transportation.com">info@goodnews-transportation.com</a></p>
     </footer>
-
-    <!-- External JavaScript -->
-    <script src="scripts.js"></script>
 </body>
 </html>
